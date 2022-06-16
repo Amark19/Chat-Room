@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+<h1 align="center">ChatBook📱📕</h1>
+<h2>Steps:</h2>
+<h3>1.Initial steps</h3>
+<p>
+  - Installing essential libraries such as firebase,react-router-dom,react-chat-engine.<br>
+  - created basic login page with google signup <br>
+  </p>
+<h3>2.Setting up firebase authentication</h3>
+<p>
+  - create new project.<br>
+  - Add app for web.<br>
+  - copy the firebase template for npm(i.e fireabase.js) and paste it into your src/firebase.js file.<br>
+  - export const auth variable so that can be imported in other components which basically has getAuth(app) method it returns authentication instance w.r.t ur app.<br>
+  - Export const signin function which contains method signInWithPop to which provided details like auth and provider(instance for GoogleAuthProvider) and this can be used in login.js file or can be fired when user clicks on google button .
+  </p>
+ <h3>3.Create context api</h3>
+<p>
+  - created contexts folder in which authcontext.js file.<br>
+  - created context hook and api,usestate to store users data and loading usestate.<br>
+  - And in useeffect added dependency array [user] and have method onAuthStateChanged contains callback function which will call setuser,setloading function and if user is valid then navigate to ("/chats")<br>
+  -  This context hook can be imported in App.js and will be wrapped up between Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  </p>
+   <h3>4.Setting up chatengine</h3>
+<p>
+  - create account on chatengine.io and create one project which contains project_id,key.<br>
+  - fetch it's api using axios.get if users exist or else axios.post if its not with having header values,data(user.email,user.uid) in chats.js.<br>
 
-## Available Scripts
+  </p>
+    <h3>5.Deploy it's build in netlify</h3>
+<p>
+  - link:- <a href="https://chat-book.netlify.app/">chatbook</a>
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  </p>
